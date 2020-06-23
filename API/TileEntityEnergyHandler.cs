@@ -99,7 +99,7 @@ namespace TerraEnergyAPI.API
             int len = trueReader.ReadUInt16();
             MemoryStream stream = new MemoryStream(trueReader.ReadBytes(len));
             tag = TagIO.FromStream(stream, true);
-            ErrorLogger.Log(tag.Count);
+            mod.Logger.Debug(tag.Count);
             EnergyContainer.ReadTagCompound(tag);
         }
 
